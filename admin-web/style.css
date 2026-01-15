@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ==========================
+   Root & Colors
+   ========================== */
+:root {
+  --poppins: 'Poppins', sans-serif;
+  --lato: 'Lato', sans-serif;
+
+  --gold: #FFD700;
+  --black: #000000;
+  --dark-gray: #222;
+  --light-gray: #444;
+  --white: #fff;
+  --blue: #3C91E6;
+  --red: #DB504A;
+  --yellow: #FFCE26;
+  --orange: #FD7238;
+}
+
+/* ==========================
+   Reset & Global
+   ========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--poppins);
+  overflow-x: hidden;
+  background: linear-gradient(135deg, var(--black), var(--gold));
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--white);
+}
+
+a { text-decoration: none; }
+li { list-style: none; }
+
+/* ==========================
+   Sidebar
+   ========================== */
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  z-index: 2000;
+  font-family: var(--lato);
+  transition: .3s ease;
+  overflow-x: hidden;
+}
+
+#sidebar.hide { width: 60px; }
+
+#sidebar .brand {
+  font-size: 24px;
+  font-weight: 700;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  color: var(--gold);
+  padding: 10px 20px;
+}
+
+#sidebar .brand img {
+  width: 40px;
+  height: auto;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+#sidebar ul.side-menu {
+  width: 100%;
+  margin-top: 48px;
+}
+
+#sidebar ul.side-menu li {
+  height: 48px;
+  margin-left: 6px;
+  border-radius: 48px 0 0 48px;
+}
+
+#sidebar ul.side-menu li a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 48px;
+  font-size: 16px;
+  color: var(--white);
+  padding: 10px 20px;
+}
+
+#sidebar ul.side-menu li.active a { color: var(--gold); }
+
+#sidebar ul.side-menu li a.logout { color: var(--red); }
+
+#sidebar ul.side-menu li a:hover { background: rgba(255,215,0,0.2); }
+
+/* ==========================
+   Content & Navbar
+   ========================== */
+#content {
+  position: relative;
+  width: calc(100% - 280px);
+  left: 280px;
+  transition: .3s ease;
+}
+
+#sidebar.hide ~ #content {
+  width: calc(100% - 60px);
+  left: 60px;
+}
+
+#content nav {
+  height: 60px;
+  background: rgba(0,0,0,0.8);
+  padding: 0 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Style for the search input */
+.form-input input {
+    width: 300px;       /* Adjust the length/width */
+    height: 40px;       /* Adjust the height */
+    padding: 0 15px;    /* Add left/right padding */
+    border-radius: 20px 0 0 20px;; /* Rounded corners */
+    border: 1px solid #ccc; /* Optional: border color */
+    outline: none;
+    font-size: 16px;
+}
+
+/* Optional: adjust the search button height to match */
+.form-input button.search-btn {
+    height: 40px;       /* same as input height */
+    border-radius: 0 20px 20px 0; /* only round right corners */
+    padding: 0 12px;
+    border: none;
+    background: #a08016; /* button color */
+    color: white;
+    cursor: pointer;
+}
+
+#content nav a { color: var(--gold); }
+
+#content nav .profile img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ==========================
+   Main Content
+   ========================== */
+main {
+  padding: 90px 40px;
+}
+
+.head-title h1 { color: var(--gold); }
+
+.box-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-gap: 24px;
+  margin-top: 36px;
+}
+
+.box-info li {
+  padding: 24px;
+  background: rgba(0,0,0,0.7);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.box-info li i {
+    font-size: 50px; /* adjust as needed */
+}
+
+.box-info li .text h3,
+.box-info li .text p { color: var(--gold); }
+
+/* ==========================
+   Table Styles (index.php)
+   ========================== */
+.table-data {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.table-data > div {
+  flex-grow: 1;
+  flex-basis: 400px;
+  border-radius: 20px;
+  background: rgba(0,0,0,0.7);
+  padding: 24px;
+  overflow-x: auto;
+}
+
+.table-data .head h3 { color: var(--gold); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th {
+  padding-bottom: 12px;
+  font-size: 13px;
+  text-align: left;
+  border-bottom: 1px solid var(--gold);
+  color: var(--gold);
+}
+
+table td {
+  padding: 16px 12px;
+  color: var(--white);
+}
+
+table td img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+tr:hover { background: rgba(255,215,0,0.1); }
+
+.status {
+  font-size: 10px;
+  padding: 6px 16px;
+  color: var(--white);
+  border-radius: 20px;
+  font-weight: 700;
+}
+
+.status.completed { background: var(--blue); }
+.status.process { background: var(--yellow); color: var(--black); }
+.status.pending { background: var(--orange); color: var(--black); }
+
+/* ==========================
+   Todos
+   ========================== */
+.todo-list li {
+  background: rgba(0,0,0,0.7);
+  border-radius: 10px;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-list li.completed { border-left: 10px solid var(--blue); }
+.todo-list li.not-completed { border-left: 10px solid var(--orange); }
+
+/* ==========================
+   Buttons
+   ========================== */
+button {
+  background: linear-gradient(135deg, var(--black), var(--gold));
+  color: var(--white);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover { opacity: 0.8; }
+
+/* ==========================
+   Responsive
+   ========================== */
+@media screen and (max-width: 768px) {
+  #sidebar { width: 200px; }
+  #content { width: calc(100% - 200px); left: 200px; }
+  .box-info { grid-template-columns: 1fr; }
+}
+
+@media screen and (max-width: 576px) {
+  main { padding: 80px 20px; }
+}
+
+ /* ==========================
+   profile w name adjust(nav)
+   ========================== */
+   /* Profile section in navbar */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.profile-info h4 {
+    font-size: 14px;
+    margin: 0;
+    font-weight: 600;
+}
+
+.profile-info p {
+    font-size: 12px;
+    color: gray;
+    margin: 0;
+}
+
+.profile img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold);
+}

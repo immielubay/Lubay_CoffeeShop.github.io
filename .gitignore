@@ -1,0 +1,12 @@
+# Ignore sensitive files
+admin-web/include/db_connect.php
+
+# Flutter / Android
+android-client/build/
+android-client/.idea/
+android-client/*.iml
+android-client/*.log
+
+# PHP / Web
+admin-web/vendor/
+admin-web/*.env
