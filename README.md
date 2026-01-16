@@ -53,5 +53,5 @@ This project has two parts:
 
 ![Demo Preview](demo.gif)
 
-Click [here](https://github.com/immielubay/Lubay_CoffeeShop.github.io/blob/main/demo.mp4) to watch the full video
+Click [here (admin)](https://github.com/immielubay/Lubay_CoffeeShop.github.io/blob/main/admin.mp4) and [here (client)](https://github.com/immielubay/Lubay_CoffeeShop.github.io/blob/main/client.mp4) to watch the full video
 
