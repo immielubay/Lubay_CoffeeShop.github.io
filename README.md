@@ -49,6 +49,7 @@ This project has two parts:
 
 ## 🎥 Video Demo
 
-![Demo Preview](demo.gif)
-
-Click [here](https://github.com/immielubay/Lubay_CoffeeShop.github.io/blob/main/demo.mp4) to watch the full video
+<video width="600" controls>
+  <source src="admin.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
