@@ -46,4 +46,11 @@ This project has two parts:
 - Sensitive files like database credentials are NOT included.
 - See `admin-web/include/db_connect-example.php` for a sample config file.
 - The Android app currently connects to a live test server:
+
+## 🎥 Video Demo
+
+<video width="600" controls>
+  <source src="demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
   
